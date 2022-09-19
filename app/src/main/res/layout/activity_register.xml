@@ -43,7 +43,7 @@
         android:gravity="center"
         android:hint="Contraseña"
         android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:layout_marginTop="10dp"
         />
     <TextView

@@ -10,9 +10,9 @@ import androidx.annotation.Nullable;
 public class sqlBanco extends SQLiteOpenHelper {
     //Definición de las tablas de la BD
     String tblcustomer = "CREATE TABLE customer(email text primary key, name text, password text, rol text)";
-    String tblaccount = "CREATE TABLE account(accountnumber  integer primary key autoincrement, email text, date text, balance int)";
+    String tblaccount = "CREATE TABLE account(accountnumber  integer primary key autoincrement, email text, date text, balance integer)";
     String tbltranstype = "CREATE TABLE  transtype(idtranstype text primary key, descripcion text)";
-    String tbltransactionc = "CREATE TABLE transactionc (accountnumber text, idtranstype text, datetrans text, amount int)";
+    String tbltransactionc = "CREATE TABLE transactionc (accountnumber integer, idtranstype text, datetrans text, amount integer)";
     public sqlBanco(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
