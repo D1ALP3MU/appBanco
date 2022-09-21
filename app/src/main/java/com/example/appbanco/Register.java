@@ -3,6 +3,7 @@ package com.example.appbanco;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -70,6 +71,12 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                 dbadd.insert("customer", null, cvCustomer);
                 dbadd.close();
                 Toast.makeText(getApplicationContext(), "Cliente agregado correctamente", Toast.LENGTH_SHORT).show();
+                // Chequear si el rol es administrador o usuario
+                if (srolSelect.equals("Administrador")){
+                    startActivity(new Intent(getApplicationContext(), Cuenta.class));
+                } else {
+                    startActivity(new Intent(getApplicationContext(), Usuario.class));
+                }
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }

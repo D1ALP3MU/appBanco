@@ -14,6 +14,12 @@
         android:theme="@style/Theme.AppBanco"
         tools:targetApi="31">
         <activity
+            android:name=".Usuario"
+            android:exported="false" />
+        <activity
+            android:name=".Cuenta"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
