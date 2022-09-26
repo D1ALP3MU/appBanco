@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     EditText user, pass;
-    private Cursor fila;
+    private Cursor infoUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,40 +59,40 @@ public class MainActivity extends AppCompatActivity {
         /*Inicializamos al cursor y llamamos al objeto de la base
         de datos para realizar un sentencia query where donde
         pasamos las dos variables nombre de usuario, name, password y el rol*/
-        fila = db.rawQuery("select email, name, password, rol from customer where email='"+
+        infoUser = db.rawQuery("select email, name, password, rol from customer where email='"+
                 usuario +"' and password ='"+ contrasena+"'",null);
 
         /*Realizamos un try catch para captura de errores*/
         try {
             /*Condicional if preguntamos si cursor tiene algun dato*/
-            if(fila.moveToFirst()){
+            if(infoUser.moveToFirst()){
                 //capturamos los valores del cursos y lo almacenamos en variable
-                String usu = fila.getString(0);
-                String name = fila.getString(1);
-                String psw = fila.getString(2);
-                String rol = fila.getString(3);
+                String usu = infoUser.getString(0);
+                String name = infoUser.getString(1);
+                String psw = infoUser.getString(2);
+                String rol = infoUser.getString(3);
                 //preguntamos si los datos ingresados son iguales
                 if (usuario.equals(usu) && contrasena.equals(psw)){
                     if ("Administrador".equals(rol)){
                         //Si son iguales entonces vamos a otra ventana dependiendo del rol
                         //Cuentas si el rol es Administrador
-                        Intent ven = new Intent(this, Cuenta.class);
+                        Intent ventana = new Intent(this, Cuenta.class);
 
                         //Mandamos el usuario
-                        ven.putExtra("Usuario", name);
+                        ventana.putExtra("Usuario", name);
 
                         //Lanzamos la actividad
-                        startActivity(ven);
+                        startActivity(ventana);
 
-                        //limpiamos las las cajas de texto
+                        //Limpiamos las cajas de texto
                         user.setText("");
                         pass.setText("");
                     } else {
                         //Si el rol es usuario vamos a la ventana de Usuario
-                        Intent ven = new Intent(this, Usuario.class);
+                        Intent ventana = new Intent(this, Usuario.class);
 
                         //Lanzamos la actividad
-                        startActivity(ven);
+                        startActivity(ventana);
 
                         //Limpiamos las las cajas de texto
                         user.setText("");
