@@ -22,14 +22,16 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
     String [] rols = {"Administrador", "Usuario"};
     String rolSelect;
 
+    EditText email, name, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         //Instanciar y referenciar
-        EditText email = findViewById(R.id.etemailreg);
-        EditText name = findViewById(R.id.etnamereg);
-        EditText password = findViewById(R.id.etpasswordreg);
+        email = (EditText)findViewById(R.id.etemailreg);
+        name = (EditText)findViewById(R.id.etnamereg);
+        password = (EditText)findViewById(R.id.etpasswordreg);
         Spinner rol = findViewById(R.id.sprolreg);
         Button register = findViewById(R.id.btnregister);
         ArrayAdapter adpRol = new ArrayAdapter(this, android.R.layout.simple_list_item_checked, rols);
@@ -48,14 +50,19 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
     private void searchCustomer(String sEmail, String sName, String sPassword, String srolSelect) {
         //Crear Array para almacenar los datos de la consulta (query)
         ArrayList<String> dataCustomer = new ArrayList<String>();
+
         //Instanciar la clases sqlBanco (SQLiteOpenHelper)
         sqlBanco ohBanco = new sqlBanco(this, "dbbanco", null, 1);
+
         //Instanciar la clase SQLiteDataBase para la crud
         SQLiteDatabase db = ohBanco.getReadableDatabase();
+
         //Crear variable para la consulta
         String sql = "Select email From customer Where email = '"+ sEmail +"'";
+
         //Ejecutar la instrucción que contiene la variable sql, a través de un cursor
         Cursor cCustomer = db.rawQuery(sql, null);
+
         //Chequear si la tabla cCustomer quedó con al menos un registro
         if (!cCustomer.moveToFirst()){ //No lo encontró
             // Agregar el cliente con todos sus datos
@@ -74,8 +81,18 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                 // Chequear si el rol es administrador o usuario
                 if (srolSelect.equals("Administrador")){
                     startActivity(new Intent(getApplicationContext(), Cuenta.class));
+
+                    //Limpiar las cajas de texto
+                    email.setText("");
+                    name.setText("");
+                    password.setText("");
                 } else {
                     startActivity(new Intent(getApplicationContext(), Usuario.class));
+
+                    //Limpiar las cajas de texto
+                    email.setText("");
+                    name.setText("");
+                    password.setText("");
                 }
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
