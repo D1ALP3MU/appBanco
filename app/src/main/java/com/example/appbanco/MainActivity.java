@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
                         Intent ventana = new Intent(this, Cuenta.class);
 
                         //Mandamos el usuario
-                        ventana.putExtra("Usuario", name);
+                        ventana.putExtra("sname", name);
+                        ventana.putExtra("srol", rol);
 
                         //Lanzamos la actividad
                         startActivity(ventana);
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }//Si la primera condicion no cumple entonces que envie un mensaje toast
             else {
-                Toast.makeText(getApplicationContext(), "Datos incorrectos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Email y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception e) {//capturamos los errores que ubieran

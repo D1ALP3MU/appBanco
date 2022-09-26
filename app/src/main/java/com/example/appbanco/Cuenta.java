@@ -12,10 +12,10 @@ public class Cuenta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuenta);
-        tv_username = (TextView)findViewById(R.id.tv_user_result);
+        tv_username = (TextView)findViewById(R.id.tvusuarioc);
+        TextView usuarioc = findViewById(R.id.tvusuarioc);
+        // Mostrar el nombre y el rol enviados desde el MainActivity.java
+        usuarioc.setText(usuarioc.getText().toString()+" "+getIntent().getStringExtra("sname") +  " rol " + getIntent().getStringExtra("srol"));
 
-        //recibimos el usuario que nos envia MainActivity
-        String valor = getIntent().getStringExtra("Usuario");
-        tv_username.setText(valor);
     }
 }
