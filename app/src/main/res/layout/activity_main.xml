@@ -57,7 +57,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:backgroundTint="#3F51B5"
+            android:backgroundTint="#00BCD4"
             android:onClick="IniciarSesion"
             android:text="Iniciar Sesión"
             android:textAllCaps="false" />

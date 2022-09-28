@@ -80,12 +80,20 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                 Toast.makeText(getApplicationContext(), "Cliente agregado correctamente", Toast.LENGTH_SHORT).show();
                 // Chequear si el rol es administrador o usuario
                 if (srolSelect.equals("Administrador")){
-                    startActivity(new Intent(getApplicationContext(), Cuenta.class));
+                    //startActivity(new Intent(getApplicationContext(), Cuenta.class));
+                    Intent ventana = new Intent(getApplicationContext(), Cuenta.class);
+
+                    //Mandamos el usuario y el rol
+                    ventana.putExtra("sname", sName);
+                    ventana.putExtra("srol", srolSelect);
+
+                    startActivity(ventana);
 
                     //Limpiar las cajas de texto
                     email.setText("");
                     name.setText("");
                     password.setText("");
+
                 } else {
                     startActivity(new Intent(getApplicationContext(), Usuario.class));
 

@@ -1,70 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register"
+    tools:context=".AgregarCuenta"
     android:orientation="vertical"
-    android:background="#ACF2FB"
+    android:background="#9ED2FB"
     >
+
     <ImageView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:src="@drawable/ic_baseline_assignment_ind_24"
+        android:src="@drawable/ic_baseline_account_balance_24"
         android:layout_gravity="center"
         />
+
     <EditText
-        android:id="@+id/etemailreg"
-        android:layout_marginTop="10dp"
+        android:id="@+id/etemailc"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="Identificación"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:gravity="center"
-        android:layout_gravity="center"
-        />
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
     <EditText
-        android:id="@+id/etnamereg"
+        android:id="@+id/etfechac"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:hint="Nombre"
-        android:drawableStart="@drawable/ic_baseline_person_24"
-        android:inputType="textPersonName"
+        android:hint="Fecha"
+        android:drawableStart="@drawable/ic_baseline_calendar_month_24"
+        android:inputType="date"
         android:layout_marginTop="10dp"
         />
+
     <EditText
-        android:id="@+id/etpasswordreg"
+        android:id="@+id/etbalancec"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_baseline_monetization_on_24"
         android:gravity="center"
-        android:hint="Contraseña"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:inputType="textPassword"
-        android:layout_marginTop="10dp"
-        />
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Rol o Función"
-        android:layout_gravity="center"
-        />
-    <Spinner
-        android:id="@+id/sprolreg"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        />
+        android:hint="Balance"
+        android:inputType="number" />
+
     <Button
         android:id="@+id/btnregister"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Registrar"
+        android:text="Agregar"
         android:textAllCaps="false"
         android:backgroundTint="#00BCD4"
         android:layout_gravity="center"
