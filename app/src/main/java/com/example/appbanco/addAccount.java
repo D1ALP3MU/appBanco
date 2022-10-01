@@ -3,42 +3,42 @@ package com.example.appbanco;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
 
-public class AgregarCuenta extends AppCompatActivity {
+public class addAccount extends AppCompatActivity {
 
+    TextView snumberc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agregar_cuenta);
-
-        //Instanciar y referenciar los IDs del archivo agregar_cuenta.xml
+        setContentView(R.layout.activity_add_account);
+        // instanciar y referenciar los IDs del archivo xml
         EditText emailc = findViewById(R.id.etemailc);
         EditText fechac = findViewById(R.id.etfechac);
         EditText balancec = findViewById(R.id.etbalancec);
-        Button agregarc = findViewById(R.id.btnagregar);
+        Button agregarc = findViewById(R.id.btnagregarc);
+        snumberc = (TextView) findViewById(R.id.tvnumberc);
 
         agregarc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                agregarCuenta(emailc.getText().toString(), fechac.getText().toString(), balancec.getText().toString());
+                agregarCuenta(emailc.getText().toString(), fechac.getText().toString(), balancec.getText().toString(), snumberc.getText().toString());
             }
         });
     }
 
-    private void agregarCuenta(String sEmail, String sDate, String sBalance) {
-
+    private void agregarCuenta(String semail, String sdate, String sbalance, String numeroc) {
         //Crear Array para almacenar los datos de la consulta (query)
         ArrayList<String> dataAccount = new ArrayList<String>();
 
@@ -49,7 +49,7 @@ public class AgregarCuenta extends AppCompatActivity {
         SQLiteDatabase db = ohBanco.getReadableDatabase();
 
         //Crear variable para la consulta
-        String sql = "Select email From account Where email = '"+ sEmail +"'";
+        String sql = "Select email From account Where email = '"+ semail +"'";
 
         //Ejecutar la instrucción que contiene la variable sql, a través de un cursor
         Cursor cAccount = db.rawQuery(sql, null);
@@ -62,28 +62,29 @@ public class AgregarCuenta extends AppCompatActivity {
             // Manejo de excepciones
             try {
                 ContentValues cvAccount = new ContentValues();
-                cvAccount.put("email", sEmail);
-                cvAccount.put("date", sDate);
-                cvAccount.put("balance", sBalance);
+                cvAccount.put("email", semail);
+                cvAccount.put("date", sdate);
+                cvAccount.put("balance", sbalance);
                 dbadd.insert("account", null, cvAccount);
                 //dbadd.close();
                 Toast.makeText(getApplicationContext(), "Cuenta agregada correctamente", Toast.LENGTH_SHORT).show();
 
-                String accountsql = "Select accountnumber from account order by accountnumber desc limit 1;";
-                Cursor sacNumber = db.rawQuery(accountsql,null);
+                Log.i("number cuenta", "la tabla cuenta " + cvAccount);
 
+                String acsql = "Select accountnumber from account order by accountnumber desc limit 1;";
+                Cursor sacNumber = db.rawQuery(acsql,null);
                 if (sacNumber.moveToFirst()){
-                    Toast.makeText(getApplicationContext(),"Número de cuenta " + sacNumber.getInt(0), Toast.LENGTH_SHORT).show();
-                    String numeroc = sacNumber.getString(0);
-
-                    acnumber.setText(numeroc);
+                    //Toast.makeText(getApplicationContext(), "Número de cuenta " + sacNumber.getInt(0), Toast.LENGTH_SHORT).show();
+                    String numero = sacNumber.getString(0);
+                    snumberc.setText(numero);
                 }
+                Log.i("NumberGenerated", "Hola mundo");
 
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Ya exixte una cuenta con éste email o no se ha registrado!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Este email ya tine una cuenta o no se ha registrado", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgregarCuenta"
+    tools:context=".addAccount"
     android:orientation="vertical"
-    android:background="#9ED2FB"
     >
 
     <ImageView
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_baseline_account_balance_24"
@@ -19,24 +18,26 @@
 
     <EditText
         android:id="@+id/etemailc"
+        android:layout_marginTop="10dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:hint="Email"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:gravity="center"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:layout_gravity="center"
+        />
+
     <EditText
         android:id="@+id/etfechac"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_baseline_calendar_month_24"
         android:gravity="center"
         android:hint="Fecha"
-        android:drawableStart="@drawable/ic_baseline_calendar_month_24"
         android:inputType="date"
-        android:layout_marginTop="10dp"
         />
 
     <EditText
@@ -44,19 +45,29 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:drawableStart="@drawable/ic_baseline_monetization_on_24"
         android:gravity="center"
         android:hint="Balance"
-        android:inputType="number" />
+        android:drawableStart="@drawable/ic_baseline_monetization_on_24"
+        android:inputType="number"
+        android:layout_marginTop="10dp"
+        />
 
     <Button
-        android:id="@+id/btnregister"
+        android:id="@+id/btnagregarc"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Agregar"
         android:textAllCaps="false"
         android:backgroundTint="#00BCD4"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tvnumberc"
+        android:layout_marginTop="10dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Número de cuenta"
         android:layout_gravity="center"
         />
 
