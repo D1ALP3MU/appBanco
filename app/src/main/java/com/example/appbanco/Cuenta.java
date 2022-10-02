@@ -35,6 +35,12 @@ public class Cuenta extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), addAccount.class));
             }
         });
+        buscarc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), viewUsers.class));
+            }
+        });
 
     }
 

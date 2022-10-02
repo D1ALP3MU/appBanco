@@ -47,6 +47,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
         });
     }
 
+
     private void searchCustomer(String sEmail, String sName, String sPassword, String srolSelect) {
         //Crear Array para almacenar los datos de la consulta (query)
         ArrayList<String> dataCustomer = new ArrayList<String>();
