@@ -82,6 +82,34 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/etbalancecAct"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese nuevo balance"
+            android:inputType="number"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnActualizaBal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#38E54D"
+        android:text="ACTUALIZAR" />
+
+    <Button
+        android:id="@+id/btnBorrarBal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF1E1E"
+        android:text="BORRAR" />
 
 
 </LinearLayout>
