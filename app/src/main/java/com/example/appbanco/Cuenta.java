@@ -9,12 +9,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Cuenta extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,8 @@ public class Cuenta extends AppCompatActivity {
         Button agregar = findViewById(R.id.btnagregar);
         Button actualizarc = findViewById(R.id.btnactualizar);
         Button eliminarc = findViewById(R.id.btneliminar);
-        Button buscarc = findViewById(R.id.btnbuscar);
+        Button BuscarOne = findViewById(R.id.btnbuscarOne);
+        Button listarc = findViewById(R.id.btnbuscar);
 
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,12 +38,22 @@ public class Cuenta extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), addAccount.class));
             }
         });
-        buscarc.setOnClickListener(new View.OnClickListener() {
+
+        BuscarOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), searchCuenta1.class));
+            }
+        });
+
+        listarc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), viewUsers.class));
             }
         });
+
+
 
     }
 

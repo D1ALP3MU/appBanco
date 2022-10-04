@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".searchCuenta1"
+    android:orientation="vertical"
+    android:background="#ACF2FB"
+    >
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar cuenta"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/etnumbercBus"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese número de cuenta"
+            android:textColor="@color/black"
+            android:inputType="number"
+            />
+
+        <Button
+            android:id="@+id/btnSearchc"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Buscar"
+            android:backgroundTint="#00BCD4"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvnamebus"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvfechabus"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Fecha"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvbalancebus"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Balance"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
