@@ -9,6 +9,14 @@
     android:background="#ACF2FB"
     >
 
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_baseline_person_search_24"
+        android:layout_gravity="center"
+        />
+
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -32,6 +40,7 @@
             android:hint="Ingrese número de cuenta"
             android:textColor="@color/black"
             android:inputType="number"
+            android:layout_marginLeft="10dp"
             />
 
         <Button
@@ -40,7 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Buscar"
-            android:backgroundTint="#00BCD4"
+            android:backgroundTint="#2846A9"
+            app:cornerRadius="10dp"
             />
 
     </LinearLayout>
@@ -48,33 +58,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        >
+
+        <TextView
+            android:id="@+id/tvemailCuenta"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
         <TextView
             android:id="@+id/tvnamebus"
-            android:layout_width="120dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Nombre"
-            android:layout_marginLeft="10dp"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            />
-
-        <TextView
-            android:id="@+id/tvfechabus"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="Fecha"
-            android:layout_marginLeft="10dp"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            />
-
-        <TextView
-            android:id="@+id/tvbalancebus"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="Balance"
             android:layout_marginLeft="10dp"
             android:textSize="18dp"
             android:textColor="@color/black"
@@ -85,7 +92,97 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tvfechaCuenta"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Fecha:"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/tvfechabus"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tvbalanceCuenta"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Balance:"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/tvbalancebus"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvbalancecAct"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizar balance"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
 
         <EditText
             android:id="@+id/etbalancecAct"
@@ -93,23 +190,39 @@
             android:layout_height="wrap_content"
             android:hint="Ingrese nuevo balance"
             android:inputType="number"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnActualizaBal"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#38E54D"
-        android:text="ACTUALIZAR" />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        >
 
-    <Button
-        android:id="@+id/btnBorrarBal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FF1E1E"
-        android:text="BORRAR" />
+        <Button
+            android:id="@+id/btnActualizaBal"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#38E54D"
+            android:text="Actualizar"
+            app:cornerRadius="20dp"
+            />
+
+        <Button
+            android:id="@+id/btnBorrarBal"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF1E1E"
+            android:text="Eliminar"
+            app:cornerRadius="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
 
 
 </LinearLayout>

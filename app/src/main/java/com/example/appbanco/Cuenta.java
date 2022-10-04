@@ -27,8 +27,6 @@ public class Cuenta extends AppCompatActivity {
         usuarioc.setText(usuarioc.getText().toString()+" "+getIntent().getStringExtra("sname") +  " " + getIntent().getStringExtra("srol"));
 
         Button agregar = findViewById(R.id.btnagregar);
-        Button actualizarc = findViewById(R.id.btnactualizar);
-        Button eliminarc = findViewById(R.id.btneliminar);
         Button BuscarOne = findViewById(R.id.btnbuscarOne);
         Button listarc = findViewById(R.id.btnbuscar);
 
