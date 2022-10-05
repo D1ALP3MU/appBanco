@@ -67,12 +67,26 @@ public class searchCuenta1 extends AppCompatActivity {
             public void onClick(View v) {
                 //Instanciar la clase sqlBanco (SQLiteOpenHelper)
                 sqlBanco ohBanco = new sqlBanco(getApplicationContext(), "dbbanco", null, 1);
+                if (!actualizarBalance.getText().toString().isEmpty()) {
+                    SQLiteDatabase obaccount = ohBanco.getWritableDatabase();
+                    obaccount.execSQL("UPDATE account SET balance = '" + actualizarBalance.getText().toString() + "' WHERE accountnumber = '" + numeroCbuscar.getText().toString() +"'");
+                    Toast.makeText(getApplicationContext(),"Balance actualizado correctamente...", Toast.LENGTH_SHORT).show();
+                    actualizarBalance.setText("");
+                    botonActualizarb.setVisibility(View.INVISIBLE);
+                    botonBorrarBal.setVisibility(View.INVISIBLE);
+                    balancecAct.setVisibility(View.INVISIBLE);
+                    actualizarBalance.setVisibility(View.INVISIBLE);
+                    emailCuenta.setVisibility(View.INVISIBLE);
+                    fechaCuenta.setVisibility(View.INVISIBLE);
+                    balanceCuenta.setVisibility(View.INVISIBLE);
+                    nombreBuscado.setVisibility(View.INVISIBLE);
+                    fechabuscada.setVisibility(View.INVISIBLE);
+                    balanceBuscado.setVisibility(View.INVISIBLE);
+                    numeroCbuscar.setText("");
+                } else {
+                    Toast.makeText(getApplicationContext(),"Debes ingresar un valor", Toast.LENGTH_SHORT).show();
+                }
 
-                SQLiteDatabase obaccount = ohBanco.getWritableDatabase();
-                obaccount.execSQL("UPDATE account SET balance = '" + actualizarBalance.getText().toString() + "' WHERE accountnumber = '" + numeroCbuscar.getText().toString() +"'");
-                Toast.makeText(getApplicationContext(),"Balance actualizado correctamente...", Toast.LENGTH_SHORT).show();
-                actualizarBalance.setText("");
-                startActivity(new Intent(getApplicationContext(), Cuenta.class));
             }
         });
 
@@ -90,8 +104,17 @@ public class searchCuenta1 extends AppCompatActivity {
                                 SQLiteDatabase obde = ohBanco.getWritableDatabase();
                                 obde.execSQL("DELETE FROM account WHERE accountnumber = '" + numeroCbuscar.getText().toString() +"'");
                                 Toast.makeText(getApplicationContext(),"Cuenta Eliminada correctamente...", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), Cuenta.class));
-
+                                botonActualizarb.setVisibility(View.INVISIBLE);
+                                botonBorrarBal.setVisibility(View.INVISIBLE);
+                                balancecAct.setVisibility(View.INVISIBLE);
+                                actualizarBalance.setVisibility(View.INVISIBLE);
+                                emailCuenta.setVisibility(View.INVISIBLE);
+                                fechaCuenta.setVisibility(View.INVISIBLE);
+                                balanceCuenta.setVisibility(View.INVISIBLE);
+                                nombreBuscado.setVisibility(View.INVISIBLE);
+                                fechabuscada.setVisibility(View.INVISIBLE);
+                                balanceBuscado.setVisibility(View.INVISIBLE);
+                                numeroCbuscar.setText("");
                             }
                         });
 
@@ -134,6 +157,9 @@ public class searchCuenta1 extends AppCompatActivity {
             emailCuenta.setVisibility(View.VISIBLE);
             fechaCuenta.setVisibility(View.VISIBLE);
             balanceCuenta.setVisibility(View.VISIBLE);
+            nombreBuscado.setVisibility(View.VISIBLE);
+            fechabuscada.setVisibility(View.VISIBLE);
+            balanceBuscado.setVisibility(View.VISIBLE);
         }
         else {
             Toast.makeText(this,"No existe una cuenta con ese número",Toast.LENGTH_SHORT).show();
