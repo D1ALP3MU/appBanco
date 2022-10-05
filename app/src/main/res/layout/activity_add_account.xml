@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".addAccount"
     android:orientation="vertical"
-    android:background="#ACF2FB"
+    android:background="#C5CAE9"
     >
 
     <ImageView
@@ -17,9 +17,20 @@
         android:layout_gravity="center"
         />
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar cuenta"
+        android:textSize="20dp"
+        android:textColor="#1A237E"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+
     <EditText
         android:id="@+id/etemailc"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="Email"

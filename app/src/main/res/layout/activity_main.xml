@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#ACF2FB"
+    android:background="#C5CAE9"
     >
 
     <ImageView
@@ -23,6 +23,9 @@
         android:layout_height="wrap_content"
         android:text="Inicio de Sesión"
         android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#1A237E"
          />
     <EditText
         android:id="@+id/etemail"
@@ -57,10 +60,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:backgroundTint="#00BCD4"
+            android:backgroundTint="#1A237E"
             android:onClick="IniciarSesion"
             android:text="Iniciar Sesión"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            />
         <TextView
             android:id="@+id/tvregister"
             android:layout_width="150dp"

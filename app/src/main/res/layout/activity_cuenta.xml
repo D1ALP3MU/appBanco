@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Cuenta"
     android:orientation="vertical"
-    android:background="#ACF2FB"
+    android:background="#C5CAE9"
     >
 
     <ImageView
@@ -30,7 +30,7 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp"
-        android:textColor="#000000"
+        android:textColor="#1A237E"
         />
 
     <Button
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Agregar"
-        android:backgroundTint="#00BCD4"
+        android:backgroundTint="#1A237E"
         />
 
     <Button
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Buscar"
-        android:backgroundTint="#00BCD4"
+        android:backgroundTint="#1A237E"
         />
 
     <Button
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Listar cuentas"
-        android:backgroundTint="#00BCD4"
+        android:backgroundTint="#1A237E"
         />
 
 </LinearLayout>

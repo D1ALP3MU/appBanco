@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".searchCuenta1"
     android:orientation="vertical"
-    android:background="#ACF2FB"
+    android:background="#C5CAE9"
     >
 
     <ImageView
@@ -18,12 +18,12 @@
         />
 
     <TextView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Buscar cuenta"
         android:textSize="20dp"
-        android:textColor="@color/black"
+        android:textColor="#1A237E"
         android:textStyle="bold"
         android:gravity="center"
         />
@@ -68,7 +68,7 @@
             android:layout_marginLeft="10dp"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="#1A237E"
             />
 
     </LinearLayout>
@@ -103,7 +103,7 @@
             android:layout_marginLeft="10dp"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="#1A237E"
             />
 
     </LinearLayout>
@@ -138,7 +138,7 @@
             android:layout_marginLeft="10dp"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="#1A237E"
             />
 
     </LinearLayout>
@@ -162,8 +162,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center">
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        >
 
         <TextView
             android:id="@+id/tvbalancecAct"
@@ -172,7 +173,7 @@
             android:text="Actualizar balance"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="#1A237E"
             android:gravity="center"
             />
 

@@ -25,7 +25,6 @@ public class searchCuenta1 extends AppCompatActivity {
     Button botonActualizarb, botonBorrarBal;
     TextView emailCuenta, fechaCuenta, balanceCuenta;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +46,7 @@ public class searchCuenta1 extends AppCompatActivity {
         botonActualizarb = (Button)findViewById(R.id.btnActualizaBal);
         botonBorrarBal = (Button)findViewById(R.id.btnBorrarBal);
 
-
-        //poner invisible los botones actualizar y eliminar antes de buscar
+        // Poner invisible los botones actualizar y eliminar antes de buscar
         botonActualizarb.setVisibility(View.INVISIBLE);
         botonBorrarBal.setVisibility(View.INVISIBLE);
         balancecAct.setVisibility(View.INVISIBLE);
@@ -78,6 +76,7 @@ public class searchCuenta1 extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Cuenta.class));
             }
         });
+
         botonBorrarBal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,24 +109,6 @@ public class searchCuenta1 extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-    }
-
-    public void editarCuenta(View view){
-        sqlBanco ohBanco = new sqlBanco(getApplicationContext(), "dbbanco", null, 1);
-
-        SQLiteDatabase db = ohBanco.getWritableDatabase();
-        //Establecemos los campos-valores a actualizar
-
-        String valorBalance = actualizarBalance.getText().toString();
-        String numberAc = numeroCbuscar.getText().toString();
-        //Establecemos los campos-valores a actualizar
-        ContentValues valores = new ContentValues();
-        valores.put("balance",valorBalance);
-
-        //Actualizamos el registro en la base de datos
-        db.update("account", valores, numberAc, null);
-        Toast.makeText(getApplicationContext(),"Balance actualizado correctamente...", Toast.LENGTH_SHORT).show();
-        actualizarBalance.setText("");
     }
 
     private void buscarCuenta(String toString){

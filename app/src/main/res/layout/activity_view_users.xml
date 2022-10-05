@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".viewUsers"
     android:orientation="vertical"
-    android:background="#ACF2FB"
+    android:background="#C5CAE9"
     >
 
     <LinearLayout
@@ -21,7 +21,8 @@
             android:text="Lista de cuentas"
             android:gravity="center"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="#1A237E"
+            android:textStyle="bold"
             />
 
     </LinearLayout>
