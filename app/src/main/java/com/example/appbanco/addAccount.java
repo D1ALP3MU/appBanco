@@ -48,8 +48,6 @@ public class addAccount extends AppCompatActivity {
         }
     }
 
-
-
     private void agregarCuenta(String semail, String sdate, String sbalance, String numeroc) {
 
         boolean validar = validarCampos();
@@ -57,7 +55,7 @@ public class addAccount extends AppCompatActivity {
         if(validar == true){
             String bal = balancec.getText().toString();
             int balance = Integer.parseInt(bal);
-            if(balance>=1000000 && balance <= 200000000){
+            if(balance >= 1000000 && balance <= 200000000){
                 //Crear Array para almacenar los datos de la consulta (query)
                 ArrayList<String> dataAccount = new ArrayList<String>();
 
@@ -111,7 +109,6 @@ public class addAccount extends AppCompatActivity {
                 }
             }else {
                 Toast.makeText(getApplicationContext(), "Debes ingresar entre 1 millon y 200 millones en el Balance", Toast.LENGTH_SHORT).show();
-
             }
 
         }else {

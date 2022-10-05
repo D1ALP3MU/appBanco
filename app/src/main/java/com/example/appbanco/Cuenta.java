@@ -51,9 +51,6 @@ public class Cuenta extends AppCompatActivity {
             }
         });
 
-
-
     }
-
 
 }

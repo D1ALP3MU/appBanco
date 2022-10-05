@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-}
+    }
+
     // Metodo de ingreso
     public void IniciarSesion(View view){
         /*Creamos un objeto de la clase sqlBanco e

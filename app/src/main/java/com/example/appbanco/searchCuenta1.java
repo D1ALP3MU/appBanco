@@ -55,7 +55,6 @@ public class searchCuenta1 extends AppCompatActivity {
         fechaCuenta.setVisibility(View.INVISIBLE);
         balanceCuenta.setVisibility(View.INVISIBLE);
 
-
         buscarCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
